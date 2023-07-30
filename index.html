@@ -1,0 +1,113 @@
+﻿<!--
+#############################################################
+#   Project Name: Minecraft Portal Template v2              #
+#   Author: RezzoMC (MC-Market) | RezzoMC#2890 (Discord)    #
+#   Support Group: https://discord.io/astromc               #
+#############################################################
+-->
+
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portal Template - RezzoMC</title>
+	<link rel="shortcut icon" href="img\favicon.ico">
+	<link rel="icon" type="image/png" href="img\logo.png">
+	<meta name="description" content="RezzoMC, RezzoMC Design, RezzoDesigns.Com, Portal, Minecraft, Minecraft Portal, Optimised, Server, Template, Portal Template">
+    <meta name="author" content="RezzoMC">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	<link href="css\style.css" rel="stylesheet">
+	<link href="css\effect.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://s3.amazonaws.com/files.enjin.com/813511/animate.css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+ </head>
+
+<body>
+
+
+<!-- Logo -->
+	<div class="logo">
+<div id="logo-effect">
+<a href="/"><img src="img\logo.png"></a>
+	</div>
+	</div>
+	<br>
+<!-- end Logo -->	
+
+<!-- PLAYER COUNT -->	
+	<div id="player-count" class="animated fadeIn">
+		<div id="players">
+			Join <span id="player-online"></span> other players at <span class="connect">play.astromc.ro</span> <li class="btn ipCopy" data-clipboard-text="play.astromc.ro" onclick="serverjoin();"></li>
+			</div>
+		  </div>
+<!-- end PLAYER COUNT -->
+	
+<!-- Container -->
+       <div class="animated fadeIn contain">
+		<div class="col-md-2 text-center" style="top: 0px;">
+			<a href="#"> <img class="imgs hvr-hang" src="img\forums.png">
+			</a>
+		</div>
+		<div class="col-md-2 text-center" style="top: 0px;">
+			<a href="#"> <img class="imgs hvr-hang" src="img\store.png">
+			</a>
+		</div>
+		<div class="col-md-2 text-center" style="top: 0px;">
+			<a href="#"> <img class="imgs hvr-hang" src="img\bans.png">
+			</a>
+		</div>
+		<div class="col-md-2 text-center" style="top: 0px;">
+			<a href="#"> <img class="imgs hvr-hang" src="img\vote.png">
+			</a>
+		  </div>
+		 </div>
+<!-- end Container -->
+	
+<!-- Footer -->	
+<div class="footer">
+<a href="#">
+<span class="footer">Copyright © 2018 YourName</span>
+</a>
+</div>
+	
+<!-- end Footer -->
+
+</body>
+	
+<script class="text/javascript">
+    
+    function serverjoin()
+    {
+        swal({
+            title: "IP has been copied!",
+            text: "You can join the server by adding the IP to your server list!",
+            icon: "success",
+            button: "Join Now",
+        });
+    }
+    
+</script>
+<script>var clipboard = new ClipboardJS('.ipCopy');</script>
+
+<script src="//mcapi.us/scripts/minecraft.js"></script>
+
+<script>
+			  MinecraftAPI.getServerStatus('play.astromc.ro', {
+			    port: 25565
+			  }, function (err, status) {
+			    if (err) {
+				
+			    }
+			    document.getElementById('player-online').innerHTML = status.players.now;
+			  });
+</script>
+</html>
